@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(
+        180deg,
+        #001f54 0%,
+        #003f88 35%,
+        #4f8fd6 60%,
+        #d9ecff 100%
+    );
+}
+
+.contenedor{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.tarjeta{
+    width:850px;
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+}
+
+.Logo1{
+    display:block;
+    margin:auto;
+    width:380px;
+}
+
+.titulo{
+    text-align:center;
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+    margin-top:25px;
+    margin-bottom:35px;
+    letter-spacing:2px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:white;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.form-title{
+    text-align:center;
+    margin-bottom:35px;
+    color:#001f54;
+    font-size:38px;
+    font-weight:bold;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#333;
+    font-size:20px;
+}
+
+input,
+select{
+    width:100%;
+    height:65px;
+    border:1px solid #ccc;
+    border-radius:12px;
+    padding:10px;
+    font-size:20px;
+}
+
+.btn{
+    width:100%;
+    height:70px;
+    border:none;
+    border-radius:12px;
+    background:#00a8ff;
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#0088cc;
+}
+
+.salir{
+    position:absolute;
+    top:25px;
+    right:30px;
+    background:#e53935;
+    color:white;
+    padding:18px 35px;
+    border-radius:15px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:22px;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    transition:0.3s;
+}
+
+.salir:hover{
+    background:#c62828;
+    transform:scale(1.05);
+}
+
+.preview{
+    width:380px;
+    height:240px;
+    margin:auto;
+    border:3px dashed #4f8fd6;
+    border-radius:15px;
+    overflow:hidden;
+    margin-top:15px;
+    background:#f5faff;
+}
+
+.preview img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
