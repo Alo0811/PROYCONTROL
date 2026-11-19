@@ -1,1 +1,28 @@
+<?php
+header('Content-Type: application/json; charset=utf-8');
+include("../config/conexion.php");
 
+$usuario_id = $_GET['usuario_id'] ?? $_POST['usuario_id'] ?? '';
+
+$resDisp = $conexion->query("SELECT COUNT(*) AS total FROM proyectores WHERE estado='Disponible'");
+$disponibles = ($resDisp && $row = $resDisp->fetch_assoc()) ? (int)$row['total'] : 0;
+
+$solicitudes = [];
+if (!empty($usuario_id)) {
+    $stmt = $conexion->prepare("SELECT fecha, hora, estado, IFNULL(fecha_devolucion, '') AS fecha_devolucion FROM solicitudes WHERE usuario_id = ? ORDER BY id DESC");
+    $stmt->bind_param("i", $usuario_id);
+    $stmt->execute();
+    $resSol = $stmt->get_result();
+    while ($fila = $resSol->fetch_assoc()) {
+        $solicitudes[] = $fila;
+    }
+    $stmt->close();
+}
+
+echo json_encode([
+    "status" => "success",
+    "disponibles" => $disponibles,
+    "solicitudes" => $solicitudes
+]);
+$conexion->close();
+?>
