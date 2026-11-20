@@ -51,6 +51,7 @@ if ($stmt->execute()) {
     ]);
 } else {
     echo json_encode(["status" => "error", "message" => "Error BD: " . $stmt->error]);
+    echo json_encode(["status" => "error", "message" => "Solicitud enviada"]);    
 }
 
 $stmt->close();
