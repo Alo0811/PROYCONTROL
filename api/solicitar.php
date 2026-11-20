@@ -40,19 +40,16 @@ $proyector_id = (int)$filaProy['id'];
 $fecha = date("Y-m-d");
 $hora = date("H:i:s");
 
-// Si tu tabla solicitudes usa 'Pendiente' por defecto al pedir, cámbialo aquí si es necesario
-$estadoInicial = 'Pendiente';
-
-$stmt = $conexion->prepare("INSERT INTO solicitudes (usuario_id, proyector_id, fecha, hora, estado) VALUES (?, ?, ?, ?, ?)");
+$stmt = $conexion->prepare("INSERT INTO solicitudes (usuario_id, proyector_id, fecha, hora, estado) VALUES (?, ?, ?, ?, 'Pendiente')");
 if (!$stmt) {
     echo json_encode(["status" => "error", "message" => "Error SQL: " . $conexion->error]);
     exit();
 }
 
-$stmt->bind_param("iisss", $usuario_id, $proyector_id, $fecha, $hora, $estadoInicial);
+$stmt->bind_param("iiss", $usuario_id, $proyector_id, $fecha, $hora);
 
 if ($stmt->execute()) {
-    $conexion->query("UPDATE proyectores SET estado = 'Ocupado' WHERE id = $proyector_id");
+    $conexion->query("UPDATE proyectores SET estado = 'Prestado' WHERE id = $proyector_id");
     echo json_encode([
         "status" => "success",
         "message" => "Solicitud enviada"
