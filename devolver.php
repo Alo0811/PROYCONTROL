@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('America/Mexico_City');
 include("config/conexion.php");
 
 $usuario_id = $_SESSION['usuario_id'];
