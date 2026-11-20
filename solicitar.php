@@ -23,6 +23,8 @@ if($resultado->num_rows > 0){
 
     $proyector = $resultado->fetch_assoc();
     $proyector_id = $proyector['id'];
+    $fecha = date("Y-m-d");
+    $hora = date("H:i:s");
 
     $sql = "
     INSERT INTO solicitudes
@@ -31,8 +33,8 @@ if($resultado->num_rows > 0){
     (
     '$usuario_id',
     '$proyector_id',
-    CURDATE(),
-    CURTIME(),
+    '$fecha',
+    '$hora',
     'Pendiente'
     )
     ";
