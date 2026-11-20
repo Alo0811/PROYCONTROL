@@ -29,7 +29,7 @@ if ($usuario_id <= 0) {
     exit();
 }
 
-$resProy = $conexion->query("SELECT id FROM proyectores WHERE estado = 'Disponible' ORDER BY id ASC LIMIT 1");
+$resProy = $conexion->query("SELECT id FROM proyectores WHERE estado = 'Disponible' LIMIT 1");
 if (!$resProy || $resProy->num_rows === 0) {
     echo json_encode(["status" => "error", "message" => "No hay proyectores disponibles"]);
     exit();
@@ -49,7 +49,6 @@ if (!$stmt) {
 $stmt->bind_param("iiss", $usuario_id, $proyector_id, $fecha, $hora);
 
 if ($stmt->execute()) {
-    $conexion->query("UPDATE proyectores SET estado = 'Prestado' WHERE id = $proyector_id");
     echo json_encode([
         "status" => "success",
         "message" => "Solicitud enviada"
