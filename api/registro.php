@@ -2,7 +2,6 @@
 ini_set('display_errors', 0);
 header('Content-Type: application/json; charset=utf-8');
 
-// Capturar errores fatales para devolverlos como JSON en lugar de pantalla blanca
 register_shutdown_function(function () {
     $error = error_get_last();
     if ($error && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
@@ -29,6 +28,7 @@ $rol = $_POST['rol'] ?? '';
 $salon = $_POST['salon'] ?? '';
 $carrera = $_POST['carrera'] ?? '';
 $correo = $_POST['correo'] ?? '';
+$password = $_POST['password'] ?? '';
 
 if (!isset($_FILES['credencial']) || $_FILES['credencial']['error'] !== UPLOAD_ERR_OK) {
     $errCode = $_FILES['credencial']['error'] ?? -1;
@@ -45,12 +45,12 @@ $rutaRelativa = "uploads/credenciales/" . time() . "_" . basename($_FILES['crede
 $rutaFisica = "../" . $rutaRelativa;
 
 if (move_uploaded_file($_FILES['credencial']['tmp_name'], $rutaFisica)) {
-    $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, rol, salon, carrera, correo, credencial) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, rol, salon, carrera, correo, password, credencial) VALUES (?, ?, ?, ?, ?, ?, ?)");
     if (!$stmt) {
         echo json_encode(["status" => "error", "message" => "Error SQL prepare: " . $conexion->error]);
         exit();
     }
-    $stmt->bind_param("ssssss", $nombre, $rol, $salon, $carrera, $correo, $rutaRelativa);
+    $stmt->bind_param("sssssss", $nombre, $rol, $salon, $carrera, $correo, $password, $rutaRelativa);
 
     if ($stmt->execute()) {
         echo json_encode([
