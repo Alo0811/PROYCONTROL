@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_azul_degradado"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <ImageView
+            android:id="@+id/ivLogoRegistro"
+            android:layout_width="281dp"
+            android:layout_height="105dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="Logo ProyControl"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Registro"
+                    android:textColor="#0F294A"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnSalirRegistro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="#E53935"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="14dp"
+                    android:text="Salir"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="👤 Nombre Completo"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etRegNombre"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:hint="Nombre y apellidos"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="🛡️ Rol"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spRegRol"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:paddingHorizontal="8dp"
+                android:popupBackground="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="🏫 Salón"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etRegSalon"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:hint="Ej. 2-36"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:paddingHorizontal="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="🎓 Carrera"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spRegCarrera"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:paddingHorizontal="8dp"
+                android:popupBackground="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="📧 Correo Institucional"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etRegCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:hint="correo@fcaei.uaem.edu.mx"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="🔒 Contraseña"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etRegPassword"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:hint="Crea tu contraseña"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:paddingHorizontal="12dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="📷 Credencial"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_input_suave"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <Button
+                    android:id="@+id/btnSeleccionarCredencial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:backgroundTint="#E2E8F0"
+                    android:text="Seleccionar archivo"
+                    android:textAllCaps="false"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNombreArchivo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Ningún archivo seleccionado"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivPreviewCredencial"
+                android:layout_width="210dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bg_borde_punteado"
+                android:padding="4dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btnRegistrarEntrar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#0099FF"
+                android:text="ENTRAR"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

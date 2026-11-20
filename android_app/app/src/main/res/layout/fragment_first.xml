@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_azul_degradado"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <ImageView
+            android:id="@+id/ivLogoProyControl"
+            android:layout_width="287dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="Logo ProyControl"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:letterSpacing="0.08"
+            android:text="PROY CONTROL"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Control de Préstamo de Proyectores"
+            android:textColor="#E2E8F0"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="Iniciar Sesión"
+                android:textColor="#0F294A"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Correo Institucional"
+                android:textColor="#1E293B"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/bg_input_suave"
+                android:hint="ejemplo@fcaei.uaem.edu.mx"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="14dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:text="Contraseña"
+                android:textColor="#1E293B"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/bg_input_suave"
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:paddingHorizontal="14dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#0099FF"
+                android:text="ENTRAR"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvIrRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="¿No tienes cuenta? Regístrate aquí"
+                android:textColor="#1E5AA8"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

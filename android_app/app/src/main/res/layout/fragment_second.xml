@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_azul_degradado"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ivLogoProyControl"
+                    android:layout_width="202dp"
+                    android:layout_height="102dp"
+                    android:layout_marginBottom="10dp"
+                    android:contentDescription="Logo ProyControl"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.08"
+                    android:text="PROY CONTROL"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvBienvenidaRol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Bienvenido Jefe"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSalirDashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="#E53935"
+                android:minWidth="0dp"
+                android:paddingHorizontal="14dp"
+                android:text="Salir"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Tarjeta 1: Solicitar Proyector -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Solicitar Proyector"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnSolicitarProyector"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#2ECC71"
+                android:text="Solicitar"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tarjeta 2: Devolver Proyector -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Devolver Proyector"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDevolverProyector"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:backgroundTint="#F1C40F"
+                android:text="Devolver"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tarjeta 3: Proyectores Disponibles -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="6dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Proyectores\nDisponibles"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvProyectoresDisponibles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="19"
+                android:textColor="#000000"
+                android:textSize="48sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Tarjeta 4: Mis Solicitudes -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tarjeta_blanca"
+            android:elevation="6dp"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="Mis Solicitudes"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#2C3E50"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Fecha"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Hora"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Estado"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.2"
+                    android:gravity="center"
+                    android:text="Devolución"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contenedorFilasSolicitudes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
