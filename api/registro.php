@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 header('Content-Type: application/json; charset=utf-8');
 include("../config/conexion.php");
 
@@ -16,15 +17,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $nombreImagen = $_FILES['credencial']['name'];
     $tmpImagen = $_FILES['credencial']['tmp_name'];
-    $tipoArchivo = $_FILES['credencial']['type'];
 
-    $permitidos = ["image/jpeg", "image/jpg", "image/png"];
-    if (!in_array($tipoArchivo, $permitidos)) {
-        echo json_encode(["status" => "error", "message" => "Solo se permiten imágenes JPG, JPEG o PNG"]);
-        exit();
+    $carpetaDestino = "../uploads/credenciales/";
+    if (!is_dir($carpetaDestino)) {
+        mkdir($carpetaDestino, 0777, true);
     }
 
-    // Ruta relativa para guardar en BD (igual que en tu web) y ruta física desde /api/
     $rutaRelativa = "uploads/credenciales/" . time() . "_" . basename($nombreImagen);
     $rutaFisica = "../" . $rutaRelativa;
 
@@ -41,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 "rol" => $rol
             ]);
         } else {
-            echo json_encode(["status" => "error", "message" => "Error al registrar en BD"]);
+            echo json_encode(["status" => "error", "message" => "Error BD: " . $stmt->error]);
         }
         $stmt->close();
     } else {
-        echo json_encode(["status" => "error", "message" => "Error al guardar la imagen en el servidor"]);
+        echo json_encode(["status" => "error", "message" => "No se pudo guardar la imagen en el servidor"]);
     }
 }
 $conexion->close();
